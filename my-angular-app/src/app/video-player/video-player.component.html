@@ -1,0 +1,10 @@
+<div class="video-player-container">
+  <div class="video-wrapper">
+    <iframe [src]="sanitizeUrl(currentVideo.videoId)"></iframe>
+  </div>
+  <div>
+    <h3>{{ currentVideo.title }}</h3>
+    <div class="video-desc">{{ currentVideo.description }}</div>
+    <button class="search-button btn" (click)="goBack()">Back</button>
+  </div>
+</div>

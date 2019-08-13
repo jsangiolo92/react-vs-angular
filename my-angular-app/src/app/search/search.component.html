@@ -1,0 +1,6 @@
+<form class="search-container" *ngIf="!currentVideo">
+  <input #userInput>
+  <button class="search-button btn" type="reset" (click)="search(userInput.value)">Search</button>
+  <button *ngIf="showSearch" class="btn" type="button" (click)="toggleSearch()">Go To Watch List</button>
+  <button *ngIf="!showSearch" class="btn" type="button" (click)="toggleSearch()">Back to Search</button>
+</form>

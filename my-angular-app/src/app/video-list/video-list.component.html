@@ -1,0 +1,23 @@
+<ul class="video-list" *ngIf="showSearch; else watchBlock">
+  <li *ngFor="let video of searchResults">
+    <div class="video-container">
+      <h5>{{ video.title }}</h5>
+      <img class="video-thumbnail" [src]="video.thumbnail" (click)="goToCurrentVideo(video)">
+      <p class="video-text">{{ video.description }}</p>
+      <button class="add-button" (click)="addVideoToWatchList(video)">Add to Watch List</button>
+    </div>
+  </li>
+</ul>
+
+<ng-template #watchBlock>
+  <ul class="video-list">
+    <li *ngFor="let video of watchList">
+      <div class="video-container">
+        <h5>{{ video.title }}</h5>
+        <img class="video-thumbnail" [src]="video.thumbnail" (click)="goToCurrentVideo(video)">
+        <p class="video-text">{{ video.description }}</p>
+        <button class="add-button" (click)="removeVideoFromWatchList(video)">Remove from Watch List</button>
+      </div>
+    </li>
+  </ul>
+</ng-template>
