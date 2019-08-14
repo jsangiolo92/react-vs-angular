@@ -9,6 +9,7 @@ import { Video } from 'src/video.model';
 })
 export class SearchComponent implements OnInit {
 
+  private userInput: string = '';
   private showSearch: boolean;
   private currentVideo: boolean;
   
@@ -19,8 +20,8 @@ export class SearchComponent implements OnInit {
     this.stateService.currentVideo.subscribe(video => this.currentVideo = !!video);
   }
 
-  private search(str: string): void {
-    this.stateService.searchYouTube(str);
+  private search(): void {
+    this.stateService.searchYouTube(this.userInput);
   }
 
   private toggleSearch() {
